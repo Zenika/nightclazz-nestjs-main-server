@@ -1,0 +1,24 @@
+services:
+  store:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db-scripts/mongo:/docker-entrypoint-initdb.d
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: nestjsNigthClazz
+      MONGO_INITDB_DATABASE: store
+
+  enlistment:
+    image: postgres
+    restart: always
+    volumes:
+      - ./db-scripts/postgres:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: enlistment
+      POSTGRES_USER: lifeguard
+      POSTGRES_PASSWORD: nestjsNigthClazz
