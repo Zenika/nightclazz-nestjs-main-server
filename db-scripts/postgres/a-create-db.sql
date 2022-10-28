@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS "Starship" (
-  id: uuid,
+  id uuid,
   name varchar(255),
   cockpit varchar(255),
   hold varchar(255),
   engine varchar(255),
-  teamId uuid,
+  teamId uuid
 );
-CREATE TABLE IF NOT EXISTS "Team" (id: uuid, name: varchar(255))
+CREATE TABLE IF NOT EXISTS "Team" (id uuid, name varchar(255));

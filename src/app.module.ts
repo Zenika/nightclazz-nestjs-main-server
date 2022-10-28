@@ -15,6 +15,7 @@ import { Team } from './entities/team.entity';
       password: 'nestjsNigthClazz',
       database: 'enlistment',
       entities: [Team, StarShip],
+      synchronize: true,
     }),
     TypeOrmModule.forFeature([Team]),
   ],
