@@ -1,4 +1,4 @@
-# NigthClazz NestJS
+# NightClazz NestJS
 
 ## Etape 1
 
