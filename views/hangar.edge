@@ -8,6 +8,21 @@
     <title>Hangar</title>
 </head>
 <body>
-    @include('components/header')
+    @include('partials/header')
+    <table class="Teams">
+        <thead>
+            <tr>
+                <th>Nom d'équipes</th>
+            </tr>
+        </thead>
+        <tbody class="teams-data">
+            @each(team in teams)
+                <tr>
+                    <td>{{ team.name }}</td>
+                </tr>
+            @end
+        </tbody>
+    </table>
+    <script src="/get-teams.js"></script>
 </body>
 </html>

@@ -2,14 +2,13 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RescueController } from './rescue/rescue.controller';
-import { RescueService } from './rescue/rescue.service';
 import { StarShip } from './entities/starship.entity';
 import { Team } from './entities/team.entity';
 import { Issue } from './entities/issue.entity';
 import { RadarModule } from './radar/radar.module';
 import { RescueModule } from './rescue/rescue.module';
 import { HangarModule } from './hangar/hangar.module';
+import { TeamModule } from './team/team.module';
 
 @Module({
   imports: [
@@ -23,10 +22,10 @@ import { HangarModule } from './hangar/hangar.module';
       synchronize: true,
       entities: [Team, StarShip, Issue],
     }),
-    TypeOrmModule.forFeature([Team]),
     RadarModule,
     RescueModule,
     HangarModule,
+    TeamModule,
   ],
   controllers: [AppController],
   providers: [AppService],
