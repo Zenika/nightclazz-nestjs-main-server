@@ -10,12 +10,6 @@ export class AppService {
     @InjectRepository(Team) private readonly teamRepository: Repository<Team>,
   ) {}
 
-  getHello() {
-    return {
-      message: 'We need help !',
-    };
-  }
-
   createTeam(name: string) {
     return this.teamRepository.save({
       id: randomUUID(),

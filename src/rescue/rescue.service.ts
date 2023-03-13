@@ -15,14 +15,18 @@ export class RescueService {
     return new IssuesData().toString();
   }
 
-  getRescue(id?: string) {
+  getRescue(id?: string): Promise<Issue | null> {
     return this.issueRepo.findOneBy({ id });
   }
 
-  async sendTeam(teamId: string) {
+  async sendTeam(teamId: string): Promise<Issue | null> {
     const issue = await this.issueRepo.findOne({
       where: { teamId: undefined },
     });
+
+    if (!issue) {
+      return null;
+    }
 
     await this.issueRepo.update({ id: issue.id }, { teamId: teamId });
 

@@ -9,11 +9,6 @@ interface TeamInput {
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/signal')
-  signal() {
-    return this.appService.getHello();
-  }
-
   @Post('/teams')
   createTeam(@Body() input: TeamInput) {
     return this.appService.createTeam(input.name);
@@ -22,7 +17,6 @@ export class AppController {
   @Get('/teams')
   async getTeams() {
     const teams = await this.appService.getTeams();
-    console.log(teams);
     return teams;
   }
 }

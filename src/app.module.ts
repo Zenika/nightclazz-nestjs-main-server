@@ -7,6 +7,9 @@ import { RescueService } from './rescue/rescue.service';
 import { StarShip } from './entities/starship.entity';
 import { Team } from './entities/team.entity';
 import { Issue } from './entities/issue.entity';
+import { RadarModule } from './radar/radar.module';
+import { RescueModule } from './rescue/rescue.module';
+import { HangarModule } from './hangar/hangar.module';
 
 @Module({
   imports: [
@@ -15,14 +18,17 @@ import { Issue } from './entities/issue.entity';
       host: 'localhost',
       port: 5432,
       username: 'lifeguard',
-      password: 'nestjsNigthClazz',
+      password: 'nestjsNightClazz',
       database: 'enlistment',
       synchronize: true,
       entities: [Team, StarShip, Issue],
     }),
-    TypeOrmModule.forFeature([Team, Issue]),
+    TypeOrmModule.forFeature([Team]),
+    RadarModule,
+    RescueModule,
+    HangarModule,
   ],
-  controllers: [AppController, RescueController],
-  providers: [AppService, RescueService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
