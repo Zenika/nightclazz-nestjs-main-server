@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Render } from '@nestjs/common';
 import { RescueService } from './rescue.service';
 
 @Controller('rescue')
@@ -11,7 +11,13 @@ export class RescueController {
   }
 
   @Get()
-  rescue() {
-    return this.appService.getFirstRescue();
+  @Render('rescues')
+  rescues() {
+    return;
+  }
+
+  @Get('/go')
+  solve() {
+    this.appService.getFirstRescue();
   }
 }

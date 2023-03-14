@@ -9,7 +9,7 @@ export class RadarController {
     private readonly radarService: RadarService,
   ) {}
 
-  @Get('/')
+  @Get()
   @Render('radar')
   radar() {
     return;

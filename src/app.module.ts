@@ -9,6 +9,7 @@ import { RadarModule } from './radar/radar.module';
 import { RescueModule } from './rescue/rescue.module';
 import { HangarModule } from './hangar/hangar.module';
 import { TeamModule } from './team/team.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { TeamModule } from './team/team.module';
     RescueModule,
     HangarModule,
     TeamModule,
+    StoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],

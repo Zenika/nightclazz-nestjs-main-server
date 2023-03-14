@@ -5,7 +5,7 @@ import { TeamService } from '../team/team.service';
 export class HangarController {
   constructor(private readonly teamService: TeamService) {}
 
-  @Get('/')
+  @Get()
   @Render('hangar')
   async hangar() {
     const teams = await this.teamService.getTeams();
