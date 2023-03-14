@@ -3,21 +3,22 @@ import { RescueService } from './rescue.service';
 
 @Controller('rescue')
 export class RescueController {
-  constructor(private readonly appService: RescueService) {}
+  constructor(private readonly rescueService: RescueService) {}
 
   @Get('/:id')
   getRescue(@Param('id') id: string) {
-    return this.appService.getRescue(id);
+    return this.rescueService.getRescue(id);
   }
 
   @Get()
   @Render('rescues')
-  rescues() {
-    return;
+  async rescues() {
+    const teams = await this.rescueService.getTeams();
+    return { teams };
   }
 
   @Get('/go')
   solve() {
-    this.appService.getFirstRescue();
+    this.rescueService.getFirstRescue();
   }
 }

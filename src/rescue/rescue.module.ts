@@ -6,7 +6,7 @@ import { Team } from '../entities/team.entity';
 import { Issue } from '../entities/issue.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Issue])],
+  imports: [TypeOrmModule.forFeature([Issue, Team])],
   controllers: [RescueController],
   providers: [RescueService],
 })
