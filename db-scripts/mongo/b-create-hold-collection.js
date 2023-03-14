@@ -11,7 +11,7 @@ db.holds.insertMany([
     description:
       "Appréciez-vous le champagne ? Que pensez-vous du caviar ? La Personux Z42 est la roll royce des soute de luxe. Avec ses siège en velours et sa climatisation hypoallergénique, elle vous permet de naviguer en toute confiance jusqu'au confins de la galaxie.",
     volume: '20m3',
-    capacité: '5',
+    capacity: '5',
     hull: '4/5',
   },
 ]);

@@ -9,5 +9,70 @@
 </head>
 <body>
     @include('partials/header')
+    <table>
+        <caption>Cales</caption>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Volume</th>
+                <th>Capacité</th>
+                <th>Résistance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @each(hold in holds)
+                <tr>
+                    <td>{{ hold.description }}</td>
+                    <td>{{ hold.volume }}</td>
+                    <td>{{ hold.capacity }}</td>
+                    <td>{{ hold.hull }}</td>
+                </tr>
+            @end
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Cockpits</caption>
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Armes</th>
+            <th>FOV</th>
+            <th>Résistance</th>
+        </tr>
+        </thead>
+        <tbody>
+        @each(cockpit in cockpits)
+        <tr>
+            <td>{{ cockpit.description }}</td>
+            <td>{{ cockpit.weapon }}</td>
+            <td>{{ cockpit.fieldOfView }}</td>
+            <td>{{ cockpit.hull }}</td>
+        </tr>
+        @end
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Moteurs</caption>
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Vitesse</th>
+            <th>Consommation</th>
+            <th>Acceleration</th>
+        </tr>
+        </thead>
+        <tbody>
+        @each(engine in engines)
+        <tr>
+            <td>{{ engine.description }}</td>
+            <td>{{ engine.speed }}</td>
+            <td>{{ engine.consumption }}</td>
+            <td>{{ engine.acceleration }}</td>
+        </tr>
+        @end
+        </tbody>
+    </table>
 </body>
 </html>

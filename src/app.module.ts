@@ -10,6 +10,7 @@ import { RescueModule } from './rescue/rescue.module';
 import { HangarModule } from './hangar/hangar.module';
 import { TeamModule } from './team/team.module';
 import { StoreModule } from './store/store.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -23,6 +24,9 @@ import { StoreModule } from './store/store.module';
       synchronize: true,
       entities: [Team, StarShip, Issue],
     }),
+    MongooseModule.forRoot(
+      'mongodb://lifeguard:zenika@localhost:27017/store?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.4',
+    ),
     RadarModule,
     RescueModule,
     HangarModule,
